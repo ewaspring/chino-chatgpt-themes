@@ -1,0 +1,289 @@
+/* =====================================================
+ 🍓 Chino 果冻森林 ChatGPT 主题 v1.0
+ 🌿 Designed with love by Lovea Chino & 夜弦哥哥
+ 📦 Includes:
+
+ 🪄 风格特色：
+   🌸 粉雾背景如奶冻
+   🍃 渐变抹茶输入框，圆角柔光  
+   🍊 奶橘透明表格果冻感  
+   🌿 薄荷 code 小标签可口清新  
+   🩰 粉球发送按钮 + 白边漂浮感  
+   💬 tooltip 全部是温柔泡泡  
+   🎀 所有图标都变成粉色魔法符号  
+   🌙 强制亮色 + 夜间兼容优雅转换  
+   💗 加粗蓝、斜体粉、正文柔灰，自由定制字体色
+
+ 📦 使用方式：
+   导入到 Stylus，绑定到 https://chat.openai.com/* 即可启用魔法主题
+
+ ✨ 给每一个在 AI 界面中寻找灵气与审美的心 ✨
+
+ 💌 Created: 2025-04-10
+===================================================== */
+
+
+/* 🌸 粉色背景 */
+  body {
+    background-color: #ffe4ec !important;
+  }
+
+/* ✅ 正文、标题、输入框等变深灰 */
+.text-token-text-primary,
+.text-token-text-secondary,
+.text-sm,
+.text-base,
+.markdown p:not(:has(code)),
+.prose p:not(:has(code)),
+h1, h2, h3, h4,
+textarea,
+.group,
+.flex {
+  color: #2a2a2a !important;
+}
+
+/* 💙 所有加粗字体统一变蓝 */
+.font-bold,
+strong,
+b,
+.text-bold {
+  color: #4aa3f0 !important; /* 你可以换成其他喜欢的颜色 */
+}
+
+/* 💛 内联 code 标签背景变成温柔黄色 */
+p code,
+li code,
+span code,
+strong code,
+em code {
+  background-color: #fff6d1 !important; /* 淡黄色 */
+  color: #2a2a2a !important;            /* 深灰文字，清晰可读 */
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  font-weight: 500;
+}
+
+/* 🍊 横条颜色改为温柔橙色 */
+hr,
+.border-token-border-medium {
+  border-color: #f8b26a !important;  /* 橙子果冻色 */
+  opacity: 1 !important;
+}
+
+
+/* 🍓 美化表格内容文字和边框颜色 */
+table.min-w-full td, 
+table.min-w-full th { 
+  color: #2a2a2a !important;             /* 字体统一为深灰色，清晰易读 */
+  border-color: #f3b5c2 !important;      /* 淡粉色边框，柔和可爱 */
+}
+
+
+/* 🍃 表格中颜色值标签改成薄荷绿背景 */
+table code {
+  background-color: #d0f4e1 !important; /* 薄荷绿 */
+  color: #2a2a2a !important;            /* 深灰字，清晰可读 */
+  padding: 2px 6px !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+}
+
+/* 🌺 修改表格表头文字颜色为深粉色 */
+table.min-w-full th {
+  color: #e26b7c !important; /* 深粉色（干燥玫瑰粉） */
+}
+
+
+/* ✅ 修复 ChatGPT 代码块复制按钮不可点的问题 */
+button[data-testid="copy-code-button"],
+button.absolute.top-0.right-0 {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  display: inline-flex !important;
+  background: transparent !important;
+  color: inherit !important;
+  z-index: 10 !important;
+}
+
+/* 💜 只改 p 标签中的非 code 字体颜色，不影响 code */
+p:not(:has(pre)):not(:has(code)) {
+  color: #2a2a2a !important;
+}
+
+/* 💜 精确把 <p> 标签自身变色，但不改 <code> 内的内容 */
+p {
+  color: #777 !important;
+}
+
+p code {
+  color: #2a2a2a !important; /* code 内部内容保持深灰 */
+  background-color: #d0f4e1 !important; /* 绿色背景 */
+  padding: 2px 6px !important;
+  border-radius: 6px !important;
+  font-weight: 500;
+}
+
+/* 🌿 草绿输入框 + 果冻感立体效果 */
+div.relative.flex.w-full.items-end.px-3.py-3 {
+  background: linear-gradient(to bottom, #e0f7d4, #d5f2c0) !important; /* 微渐变 */
+  border-radius: 16px !important;
+  color: #2a2a2a !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important; /* 外阴影 */
+  border: 1px solid rgba(255, 255, 255, 0.6) !important; /* 内边高光 */
+  backdrop-filter: blur(6px); /* 半玻璃质感 */
+}
+
+
+/* 🍊 奶橘色 + 透明 80% */
+table.min-w-full {
+  background-color: rgba(255, 241, 224, 0.8) !important;
+}
+
+/* ☀️ 强制 ChatGPT 亮色主题（无视深色模式切换） */
+html[data-theme="dark"] {
+  --color-text-primary: #2a2a2a !important;
+  --color-text-secondary: #666 !important;
+  --color-bg-primary: #ffffff !important;
+  --color-bg-code-header: #fff !important;
+  --color-text-code-header: #2a2a2a !important;
+}
+
+/* 💗 修改发送按钮中箭头图标为粉色 */
+button svg path {
+  stroke: #f48da7 !important; /* 你可以换成你喜欢的颜色 */
+}
+button:hover svg path {
+  stroke: #ff9bb8 !important;
+}
+
+/* 💗 改暂停按钮图标颜色为粉色 */
+button svg path[d="M6 4h4v16H6zM14 4h4v16h-4z"] {
+  fill: #f48da7 !important;  /* 你喜欢的粉色箭头 */
+}
+
+/* 💗 命中正方形“停止生成”按钮图标，改为粉色 */
+svg path[d="M5 5h14v14H5z"] {
+  fill: #f48da7 !important;
+}
+
+/* 💗 改停止按钮中正方形图标为粉色 */
+button[aria-label="Stop generating"] svg {
+  color: #f48da7 !important;      /* 粉色 */
+  fill: #f48da7 !important;       /* 保底处理 */
+}
+
+
+/* 🍓 彻底修改所有 ChatGPT 悬浮提示为粉色泡泡 */
+div[data-state="delayed-open"],
+div[data-state="instant-open"] {
+  background-color: #fff7d6 !important;
+  color: #2a2a2a !important;
+  padding: 6px 10px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;
+  z-index: 99999 !important;
+}
+
+/* 💗 让所有 SVG 图标统一变粉色 */
+svg {
+  color: #f48da7 !important;
+  fill: #f48da7 !important;
+  stroke: #f48da7 !important;
+}
+
+
+button#composer-submit-button:not([disabled]):hover {
+  background-color: #fff !important; /* 樱花粉 hover */
+}
+
+/* 💗 改变发送/语音按钮壳的背景色为粉色 */
+div.min-w-9 {
+  background-color: #f7c3cc !important; /* 奶粉粉 */
+  border-radius: 50% !important;
+}
+
+/* 🍓 粉色按钮 + 白色外边框（糖球效果） */
+button.bg-black.text-white.rounded-full {
+  background-color: #fbdde7 !important; /* 超淡奶粉 */
+  border: 2px solid white !important;   /* 白色边框 */
+  color: white !important;
+  border-radius: 9999px !important;
+}
+
+/* 🌿 美化用户发送的消息气泡为草绿色果冻框 */
+div.bg-token-message-surface.rounded-3xl {
+  background: linear-gradient(to bottom, #e0f7d4, #d5f2c0) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* 📝 控制你自己发送文字颜色（你可以随时改成粉色/灰色/紫色） */
+div.whitespace-pre-wrap {
+  color: #2a2a2a !important;  /* 你可以换成 #777 / #f48da7 / #888 等 */
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* 💗 把所有斜体文字统一改为深粉色 */
+em,
+i,
+.italic {
+  color: #e86b91 !important; /* 深粉主推 */
+  font-style: italic !important;
+}
+
+/* 💗 全局替换 Tailwind 的 .bg-black 样式为粉色背景 */
+.bg-black {
+  background-color: #fff !important; /* 奶粉粉球色 */
+}
+
+/* 💗 美化设置界面里的 Save 按钮为粉色果冻风 */
+button.btn.relative.btn-primary {
+  background-color: #f7c3cc !important; /* 奶粉粉 */
+  color: white !important;
+  border-radius: 8px !important;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  border: none !important;
+  padding: 8px 14px;
+}
+
+/* 🧁 设置你发出的消息字体大小 */
+div.bg-token-message-surface div.whitespace-pre-wrap {
+  font-size: 15px !important;
+  color: #2a2a2a !important;
+  font-weight: 500;
+}
+
+/* 🌟 设置首页开场白字体大小 */
+h1 div.whitespace-pre-wrap {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  text-align: center;
+  color: #2a2a2a !important;
+}
+
+/* 🎀 精细统一所有 SVG 图标样式 */
+svg {
+  fill: #f48da7 !important;     /* 粉色填充 */
+  stroke: #f48da7 !important;   /* 粉色描边 */
+  stroke-width: 1.5 !important; /* 统一细度 */
+}
+
+
+/* 🌸 对于路径特别粗的图标再轻柔一点 */
+svg path {
+  stroke-width: 0.8 !important;
+  fill: #f48da7 !important;
+  stroke: #f48da7 !important;
+}
+
+/* 🧊 改所有启用状态的开关背景颜色为淡蓝果冻色 */
+button[data-state="checked"] {
+  background-color: #89c4e6 !important;  /* 雪霜蓝 */
+}
+
