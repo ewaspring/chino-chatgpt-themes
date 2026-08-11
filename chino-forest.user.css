@@ -320,9 +320,12 @@ button[data-testid="composer-speech-button"] line {
     stroke: #ffffff !important;
 }
 
-/* Hover 也保持白色 waveform */
-button[data-testid="composer-speech-button"]:hover svg,
-button[data-testid="composer-speech-button"]:hover svg * {
+/* 🎙️ 新版 Composer 圆形按钮内部图标统一白色 */
+button.composer-submit-button-color svg,
+button.composer-submit-button-color svg *,
+button.composer-submit-button-color path,
+button.composer-submit-button-color rect,
+button.composer-submit-button-color line {
     color: #ffffff !important;
     fill: #ffffff !important;
     stroke: #ffffff !important;
