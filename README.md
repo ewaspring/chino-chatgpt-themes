@@ -15,7 +15,7 @@
 
 ## 💾 How to Use
 
-1. Install the [Stylus]([https://add0n.com/stylus.html](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)) browser extension (for Chrome)
+1. Install the [Stylus][https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne] browser extension (for Chrome)
 2. Click on theme file link > Raw > Copy or Import into Stylus
 3. Match with `https://chat.openai.com/*` + `https://chatgpt.com/*`
 
