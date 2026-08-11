@@ -309,22 +309,20 @@ button[data-state="checked"] {
   background-color: #89c4e6 !important;  /* 雪霜蓝 */
 }
 
-/* =====================================================
-   🎀 ChatGPT Accent Color 兼容
-   发送 / Voice 按钮：粉色底上的图标恢复白色
-   ===================================================== */
-
-/* Send */
-button[data-testid="send-button"] svg,
-button[data-testid="send-button"] svg path,
-
-/* Composer submit */
-button#composer-submit-button svg,
-button#composer-submit-button svg path,
-
-/* Voice */
+/* 🎙️ Voice 按钮：粉色底 + 白色 waveform */
 button[data-testid="composer-speech-button"] svg,
-button[data-testid="composer-speech-button"] svg path {
+button[data-testid="composer-speech-button"] svg *,
+button[data-testid="composer-speech-button"] path,
+button[data-testid="composer-speech-button"] rect,
+button[data-testid="composer-speech-button"] line {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+/* Hover 也保持白色 waveform */
+button[data-testid="composer-speech-button"]:hover svg,
+button[data-testid="composer-speech-button"]:hover svg * {
     color: #ffffff !important;
     fill: #ffffff !important;
     stroke: #ffffff !important;
