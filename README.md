@@ -9,7 +9,7 @@
 
 | Theme Name                | Description                      | Install |
 |---------------------------|----------------------------------|---------|
-| Jelly Forest v1.2.2       | Mint green input, strawberry buttons, tooltip bubbles | [🖌 Install](link) |
+| Jelly Forest v1.2.2       | Mint green input, strawberry buttons, tooltip bubbles | [🖌 Install]([link](https://userstyles.world/style/21808/chino-jelly-forest )) |
 | Sakura Sunset v1.0        | (TBD) | Coming soon |
 | Midnight Fog v1.0         | (TBD) | Coming soon |
 
