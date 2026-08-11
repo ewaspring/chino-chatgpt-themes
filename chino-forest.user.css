@@ -31,13 +31,13 @@
 
  💌 Created: 2025-04-10
 ===================================================== */
-
+@-moz-document domain("chatgpt.com") {
 
 /* 🌸 Jelly Forest 背景 */
 html,
 body {
   background-color: #ffe4ec !important;
-  background-image: url("https://raw.githubusercontent.com/ewaspring/chino-chatgpt-themes/main/assets/chino-jelly-forest-bg.png") !important;
+  background-image: url("https://raw.githubusercontent.com/ewaspring/chino-chatgpt-themes/main/assets/chino-jelly-forest-bg3.png") !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
@@ -309,3 +309,4 @@ button[data-state="checked"] {
   background-color: #89c4e6 !important;  /* 雪霜蓝 */
 }
 
+}
