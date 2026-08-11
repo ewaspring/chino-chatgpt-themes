@@ -16,8 +16,9 @@
 ## 💾 How to Use
 
 1. Install the [Stylus][https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne] browser extension (for Chrome)
-2. Click on theme file link > Raw > Copy or Import into Stylus
-3. Match with `https://chat.openai.com/*` + `https://chatgpt.com/*`
+2. Install link is here: https://userstyles.world/style/21808/chino-jelly-forest 
+3. Click on theme file link > Raw > Copy or Import into Stylus
+4. Match with `https://chat.openai.com/*` + `https://chatgpt.com/*`
 
 ---
 
