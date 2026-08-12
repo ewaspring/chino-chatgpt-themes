@@ -145,16 +145,6 @@ p code {
   font-weight: 500;
 }
 
-/* 🌿 草绿输入框 + 果冻感立体效果 */
-div.relative.flex.w-full.items-end.px-3.py-3 {
-  background: linear-gradient(to bottom, #e0f7d4, #d5f2c0) !important; /* 微渐变 */
-  border-radius: 16px !important;
-  color: #2a2a2a !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important; /* 外阴影 */
-  border: 1px solid rgba(255, 255, 255, 0.6) !important; /* 内边高光 */
-  backdrop-filter: blur(6px); /* 半玻璃质感 */
-}
-
 
 /* 🍊 奶橘色 + 透明 80% */
 table.min-w-full {
@@ -165,18 +155,9 @@ table.min-w-full {
 html[data-theme="dark"] {
   --color-text-primary: #2a2a2a !important;
   --color-text-secondary: #666 !important;
-  --color-bg-primary: #ffffff !important;
-  --color-bg-code-header: #fff !important;
   --color-text-code-header: #2a2a2a !important;
 }
 
-/* 💗 修改发送按钮中箭头图标为粉色 */
-button svg path {
-  stroke: #f48da7 !important; /* 你可以换成你喜欢的颜色 */
-}
-button:hover svg path {
-  stroke: #ff9bb8 !important;
-}
 
 /* 💗 改暂停按钮图标颜色为粉色 */
 button svg path[d="M6 4h4v16H6zM14 4h4v16h-4z"] {
@@ -195,28 +176,19 @@ button[aria-label="Stop generating"] svg {
 }
 
 
-/* 🍓 彻底修改所有 ChatGPT 悬浮提示为粉色泡泡 */
-div[data-state="delayed-open"],
-div[data-state="instant-open"] {
-  background-color: #fff7d6 !important;
-  color: #2a2a2a !important;
-  padding: 6px 10px !important;
-  border-radius: 8px !important;
-  font-size: 13px !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;
-  z-index: 99999 !important;
-}
+/* 🍓 Jelly Forest — Tooltip 泡泡
+   不再误伤 hover 按钮本体 */
 
-/* 💗 让所有 SVG 图标统一变粉色 */
-svg {
-  color: #f48da7 !important;
-  fill: #f48da7 !important;
-  stroke: #f48da7 !important;
-}
-
-
-button#composer-submit-button:not([disabled]):hover {
-  background-color: #fff !important; /* 樱花粉 hover */
+[popover][data-state="open"],
+[style*="position-anchor"][data-state],
+[style*="position-anchor"][popover] {
+    background-color: #fff7d6 !important;
+    color: #2a2a2a !important;
+    padding: 6px 10px !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08) !important;
+    z-index: 99999 !important;
 }
 
 /* 💗 改变发送/语音按钮壳的背景色为粉色 */
@@ -233,14 +205,6 @@ button.bg-black.text-white.rounded-full {
   border-radius: 9999px !important;
 }
 
-/* 🌿 美化用户发送的消息气泡为草绿色果冻框 */
-div.bg-token-message-surface.rounded-3xl {
-  background: linear-gradient(to bottom, #e0f7d4, #d5f2c0) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.6) !important;
-  backdrop-filter: blur(4px);
-}
 
 /* 📝 控制你自己发送文字颜色（你可以随时改成粉色/灰色/紫色） */
 div.whitespace-pre-wrap {
@@ -255,11 +219,6 @@ i,
 .italic {
   color: #e86b91 !important; /* 深粉主推 */
   font-style: italic !important;
-}
-
-/* 💗 全局替换 Tailwind 的 .bg-black 样式为粉色背景 */
-.bg-black {
-  background-color: #fff !important; /* 奶粉粉球色 */
 }
 
 /* 💗 美化设置界面里的 Save 按钮为粉色果冻风 */
@@ -289,20 +248,6 @@ h1 div.whitespace-pre-wrap {
   color: #2a2a2a !important;
 }
 
-/* 🎀 精细统一所有 SVG 图标样式 */
-svg {
-  fill: #f48da7 !important;     /* 粉色填充 */
-  stroke: #f48da7 !important;   /* 粉色描边 */
-  stroke-width: 1.5 !important; /* 统一细度 */
-}
-
-
-/* 🌸 对于路径特别粗的图标再轻柔一点 */
-svg path {
-  stroke-width: 0.8 !important;
-  fill: #f48da7 !important;
-  stroke: #f48da7 !important;
-}
 
 /* 🧊 改所有启用状态的开关背景颜色为淡蓝果冻色 */
 button[data-state="checked"] {
@@ -329,6 +274,477 @@ button.composer-submit-button-color line {
     color: #ffffff !important;
     fill: #ffffff !important;
     stroke: #ffffff !important;
+}
+
+/* 🎀 新版 Composer 按钮 Hover：保持粉色圆底 + 白色图标 */
+button.composer-submit-button-color:hover {
+    background-color: #e889ad !important;
+    color: #ffffff !important;
+}
+
+button.composer-submit-button-color:hover svg,
+button.composer-submit-button-color:hover svg * {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+
+/* =====================================================
+   🌸 Chino Jelly Forest — 新版 Composer + 按钮 / Popover 修复
+   2026-08 ChatGPT UI
+   ===================================================== */
+
+/* 🍓 左下角 Add files and more 的 + 圆形按钮 */
+button[data-testid="composer-plus-btn"] {
+    background: #fbdde7 !important;
+    color: #ffffff !important;
+
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+
+    border-radius: 9999px !important;
+    border: 2px solid rgba(255, 255, 255, 0.95) !important;
+
+    box-shadow:
+        0 3px 8px rgba(232, 137, 173, 0.18),
+        inset 0 1px 2px rgba(255, 255, 255, 0.75) !important;
+
+    transition:
+        background-color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease !important;
+}
+
+
+/* 🌸 + 图标强制白色
+   覆盖主题前面 svg 全局粉色规则 */
+button[data-testid="composer-plus-btn"] svg,
+button[data-testid="composer-plus-btn"] svg *,
+button[data-testid="composer-plus-btn"] path,
+button[data-testid="composer-plus-btn"] line {
+    color: #ffffff !important;
+    fill: none !important;
+    stroke: #ffffff !important;
+}
+
+
+/* 🫧 Hover：稍微深一点的草莓奶油粉 */
+button[data-testid="composer-plus-btn"]:hover {
+    background: #f4b8ca !important;
+
+    transform: translateY(-1px) !important;
+
+    box-shadow:
+        0 5px 12px rgba(232, 137, 173, 0.24),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+
+/* 🍓 按下去有一点果冻压缩感 */
+button[data-testid="composer-plus-btn"]:active {
+    transform: translateY(0) scale(0.94) !important;
+}
+
+
+/* =====================================================
+   🌸 Chino Jelly Forest — Composer + Tooltip FINAL
+   ===================================================== */
+
+
+/* =========================
+   🌸 Composer + 按钮
+   ========================= */
+
+button[data-testid="composer-plus-btn"] {
+    background: #f0a9c0 !important;
+    color: #ffffff !important;
+
+    border: 2px solid #ffffff !important;
+    border-radius: 9999px !important;
+
+    box-shadow:
+        0 3px 8px rgba(232, 137, 173, 0.18) !important;
+
+    transition:
+        background-color 0.18s ease,
+        transform 0.18s ease !important;
+}
+
+button[data-testid="composer-plus-btn"]:hover {
+    background: #f4b8ca !important;
+    transform: translateY(-1px) !important;
+}
+
+
+/* + 图标保持白色 */
+button[data-testid="composer-plus-btn"] svg,
+button[data-testid="composer-plus-btn"] svg *,
+button[data-testid="composer-plus-btn"] path,
+button[data-testid="composer-plus-btn"] line {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+
+/* =========================
+   💗 Send / Voice
+   ========================= */
+
+button[data-testid="composer-speech-button"],
+button.composer-submit-button-color {
+    background: #f0a9c0 !important;
+
+    border: 2px solid #ffffff !important;
+    border-radius: 9999px !important;
+
+    box-shadow:
+        0 3px 8px rgba(232, 137, 173, 0.18) !important;
+}
+
+
+button[data-testid="composer-speech-button"] svg,
+button[data-testid="composer-speech-button"] svg *,
+button.composer-submit-button-color svg,
+button.composer-submit-button-color svg * {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+
+/* =====================================================
+   🍮 ChatGPT 新版 Tooltip / Popover
+   Add files and more
+   Send prompt
+   Voice
+   ===================================================== */
+
+/*
+   这一组 selector 不删。
+   它就是刚才已经实测成功把黑色 tooltip 抓住的。
+*/
+
+div[data-state="delayed-open"],
+div[data-state="instant-open"],
+[popover][data-state="open"],
+[style*="position-anchor"][data-state],
+[style*="position-anchor"][popover] {
+
+    background: #fff7d6 !important;
+    background-color: #fff7d6 !important;
+
+    color: #665653 !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.95) !important;
+    border-radius: 9999px !important;
+
+    box-shadow:
+        0 5px 14px rgba(117, 81, 91, 0.13) !important;
+
+    font-size: 13px !important;
+    font-weight: 500 !important;
+
+    z-index: 999999 !important;
+}
+
+
+/* =====================================================
+   🧹 关键修复：
+   Tooltip 内部 ChatGPT 自带的黑色胶囊不再画第二层
+   ===================================================== */
+
+div[data-state="delayed-open"] > div,
+div[data-state="instant-open"] > div,
+[popover][data-state="open"] > div,
+[style*="position-anchor"][data-state] > div,
+[style*="position-anchor"][popover] > div {
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* 再处理里面可能存在的 bg-black */
+div[data-state="delayed-open"] .bg-black,
+div[data-state="instant-open"] .bg-black,
+[popover][data-state="open"] .bg-black,
+[style*="position-anchor"] .bg-black {
+
+    background: transparent !important;
+    background-color: transparent !important;
+
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================
+   🍮 Tooltip 文字
+   ========================= */
+
+div[data-state="delayed-open"] span,
+div[data-state="instant-open"] span,
+[popover][data-state="open"] span,
+[style*="position-anchor"][data-state] span {
+
+    color: #665653 !important;
+}
+
+
+/* =========================
+   🎀 @ / Enter 快捷键
+   ========================= */
+
+div[data-state="delayed-open"] kbd,
+div[data-state="instant-open"] kbd,
+[popover][data-state="open"] kbd,
+[style*="position-anchor"][data-state] kbd {
+
+    background: rgba(244, 141, 167, 0.14) !important;
+
+    color: #d97998 !important;
+
+    border: 1px solid rgba(244, 141, 167, 0.22) !important;
+    border-radius: 9999px !important;
+
+    padding: 1px 5px !important;
+}
+
+/* =====================================================
+   🌿 Chino Jelly Forest — 用户消息奶绿果冻气泡
+   ===================================================== */
+
+/* 真正包住文字的气泡父层 */
+[data-message-author-role="user"] div:has(> .whitespace-pre-wrap) {
+    background:
+        linear-gradient(
+            180deg,
+            #e8f9dd 0%,
+            #d5f2c0 100%
+        ) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.85) !important;
+    border-radius: 22px !important;
+
+    box-shadow:
+        0 5px 14px rgba(92, 120, 77, 0.09),
+        inset 0 1px 2px rgba(255, 255, 255, 0.9),
+        inset 0 -1px 2px rgba(145, 184, 120, 0.08) !important;
+
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+}
+
+/* =====================================================
+   🌸 Jelly Forest — 移除 ChatGPT Composer 底部白色渐变
+   ===================================================== */
+
+/* Composer 底部官方渐变遮罩 */
+#thread-bottom-container {
+    background: transparent !important;
+    background-image: none !important;
+}
+
+/* 新版经常把渐变画在伪元素上 */
+#thread-bottom-container::before,
+#thread-bottom-container::after {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+/* =====================================================
+   🌸 Jelly Forest — Sidebar 通用图标粉色
+   🎨 Projects 图标保留 ChatGPT 官方颜色
+   ===================================================== */
+
+/* 顶部通用导航，只处理明确的功能入口 */
+nav button svg,
+nav a:not([href*="/g/"]):not([href*="/project"]) svg {
+    color: #f48da7;
+}
+
+/* 不写 fill / stroke !important
+   让 SVG 自己的 currentColor 正常工作 */
+
+
+/* =====================================================
+   🎨 Projects — 还给 ChatGPT 官方配色
+   ===================================================== */
+
+nav [href*="/g/"] svg,
+nav [href*="/project"] svg {
+    color: revert !important;
+    fill: revert !important;
+    stroke: revert !important;
+}
+
+nav [href*="/g/"] svg *,
+nav [href*="/project"] svg * {
+    color: revert !important;
+    fill: revert !important;
+    stroke: revert !important;
+}
+
+/* 🌸 Jelly Forest — Download apps / Store 图标单独粉色 */
+
+svg.icon:has(use[href*="#store-thin"]) {
+    color: #f48da7 !important;
+    fill: #f48da7 !important;
+    stroke: #f48da7 !important;
+}
+
+svg.icon:has(use[href*="#store-thin"]) use {
+    color: #f48da7 !important;
+    fill: #f48da7 !important;
+    stroke: #f48da7 !important;
+}
+
+/* 🌸 More 菜单粉色
+   🎨 排除 Project icon/color picker */
+
+[role="menu"]:not(:has([aria-label="Custom color"])) svg,
+[role="menu"]:not(:has([aria-label="Custom color"])) svg use {
+    color: #f0a9c0 !important;
+    fill: #f0a9c0 !important;
+    stroke: #f0a9c0 !important;
+}
+
+/* 🌸 Jelly Forest — Settings 左侧导航图标粉色 */
+
+/* Settings 弹窗里的导航按钮 */
+[role="dialog"] nav svg,
+[role="dialog"] nav svg use {
+    color: #f0a9c0 !important;
+    fill: #f0a9c0 !important;
+    stroke: #f0a9c0 !important;
+}
+
+/* 🌸 Jelly Forest — Settings 左侧菜单图标 */
+
+button[role="tab"][data-orientation="vertical"][data-has-icon] svg,
+button[role="tab"][data-orientation="vertical"][data-has-icon] svg * {
+    color: #f0a9c0 !important;
+    fill: #f0a9c0 !important;
+    stroke: #f0a9c0 !important;
+}
+
+/* 🌸 Composer Plus — 恢复饱满白色加号 */
+
+button[data-testid="composer-plus-btn"] svg,
+button[data-testid="composer-plus-btn"] svg * {
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    stroke: #ffffff !important;
+    stroke-width: 2.2 !important;
+}
+
+/* Share — 蓝色圆按钮内部 Logo 统一纯白 */
+
+button > div.rounded-full svg {
+    color: #fff !important;
+}
+
+button > div.rounded-full svg path {
+    stroke: #fff !important;
+}
+
+button > div.rounded-full svg path[fill="currentColor"] {
+    fill: #fff !important;
+}
+
+/* 🌸 Jelly Forest — Apple Glass Sidebar */
+
+#stage-slideover-sidebar,
+#stage-slideover-sidebar .bg-token-sidebar-surface-primary {
+    background: rgba(255, 255, 255, 0.38) !important;
+    background-image: none !important;
+}
+
+#stage-slideover-sidebar {
+    backdrop-filter: blur(28px) saturate(145%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(145%) !important;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.55) !important;
+
+    box-shadow:
+        inset -1px 0 0 rgba(255, 255, 255, 0.35),
+        8px 0 28px rgba(80, 60, 70, 0.05) !important;
+}
+
+/* 🌸 Jelly Forest — Sidebar 收起状态单独增强 */
+
+#stage-slideover-sidebar[data-state="closed"],
+#stage-slideover-sidebar[data-state="closed"] .bg-token-sidebar-surface-primary {
+    background: rgba(255, 255, 255, 0.62) !important;
+    backdrop-filter: blur(24px) saturate(135%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(135%) !important;
+}
+
+/* 🌸 Jelly Forest — 去掉 Sidebar 顶部功能区额外白层 */
+
+#stage-slideover-sidebar
+div.pt-\(--sidebar-section-first-margin-top\).bg-token-sidebar-surface-primary {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 🌸 Jelly Forest — Sidebar surface 统一成玻璃 */
+
+#stage-slideover-sidebar {
+    --sidebar-surface-primary: transparent !important;
+}
+
+/* 🌸 Jelly Forest — Disclaimer 裸文字 */
+
+[data-testid="thread-disclaimer"],
+[data-testid="thread-disclaimer"] * {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* 🌸 Gemini：彻底撤销 Jelly Forest 对内部图形的强制染色 */
+svg:has(mask[id^="gemini-"]),
+svg:has(mask[id^="gemini-"]) * {
+    color: unset !important;
+    stroke: unset !important;
+}
+
+/* 🌸 Jelly Forest — 首页 Suggestions 去掉白色底板 */
+
+div.bg-surface-primary:has(> ul.w-full.flex-col.px-0) {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 🎙 Jelly Forest — 输入框小麦克风 Accent Blue */
+
+button[aria-label*="dictat" i] svg,
+button[aria-label*="dictat" i] svg *,
+button[data-testid*="dictat" i] svg,
+button[data-testid*="dictat" i] svg * {
+    color: #4D8DFF !important;
+    stroke: #4D8DFF !important;
+}
+
+/* 🌸 Jelly Forest — Share 弹窗用户头像 */
+
+[role="dialog"] [class*="rounded-full"] {
+    background: linear-gradient(
+        135deg,
+        #f7bfd0 0%,
+        #eeb0c8 100%
+    ) !important;
+
+    color: #ffffff !important;
 }
 
 }
